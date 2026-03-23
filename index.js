@@ -10,7 +10,12 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_for_assignment';
 
-app.use(cors());
+const cors = require("cors");
+
+app.use(cors({
+  origin: "https://go-fund-me-omega.vercel.app",
+  credentials: true
+}));
 app.use(bodyParser.json());
 
 // MongoDB setup

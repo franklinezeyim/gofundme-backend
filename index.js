@@ -14,6 +14,7 @@ const cors = require("cors");
 
 app.use(cors({
   origin: "https://go-fund-me-omega.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 app.use(bodyParser.json());

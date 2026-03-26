@@ -18,13 +18,14 @@ app.use(cors({
 app.use(bodyParser.json());
 
 // MongoDB setup
-mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/gofundme01', {
+mongoose.connect(process.env.MONGO_URL || 'mongodb://127.0.0.1:27017/gofundme', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', async () => {
+  console.log("✅ MongoDB connected");
   // Seed admin user if it doesn't exist
   const adminCount = await Admin.countDocuments();
   if (adminCount === 0) {

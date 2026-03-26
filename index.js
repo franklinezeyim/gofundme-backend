@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_for_assignment';
 
 app.use(cors({
-  origin: "https://go-fund-me-omega.vercel.app",
+  origin: "https://just-funder.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
